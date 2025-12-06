@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | RUPMAHAR STUDIO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">RUPMAHAR <span>STUDIO</span></div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="packages.html">Packages</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="active">Contact</a>
+            <a href="contact.html" class="btn-nav">Book Now</a>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    </header>
+    
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="close-btn" onclick="toggleMenu()"><i class="fas fa-times"></i></div>
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="page-header">
+        <div data-aos="fade-up">
+            <h1>Get In Touch</h1>
+            <p>We'd love to hear from you</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="contact-grid">
+            <div class="contact-item" data-aos="fade-up">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Address</h3>
+                <p>Bangla, Bankura, West Bengal</p>
+            </div>
+            <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Phone</h3>
+                <p>+91 90648 53609</p>
+            </div>
+            <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>rupmaharstudio@gmail.com</p>
+            </div>
+        </div>
+
+        <div style="max-width: 600px; margin: 50px auto; background: #1F2937; padding: 40px; border-radius: 12px;">
+            <h2 class="text-center">Send a Message</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="text" placeholder="Phone Number" required>
+                <select>
+                    <option>Wedding Photography</option>
+                    <option>Pre-Wedding</option>
+                    <option>Other</option>
+                </select>
+                <textarea rows="5" placeholder="Your Message"></textarea>
+                <button type="submit">Submit Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer><p>&copy; 2025 Rupmahar Studio.</p></footer>
+    <a href="https://wa.me/919064853609" class="float-btn"><i class="fab fa-whatsapp"></i></a>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
