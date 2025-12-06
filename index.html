@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUPMAHAR STUDIO | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-camera-retro"></i>
+            <div>RUPMAHAR <span>STUDIO</span></div>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="packages.html">Packages</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="btn-nav">Book Now</a>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="close-btn" onclick="toggleMenu()"><i class="fas fa-times"></i></div>
+        <a href="index.html">Home</a>
+        <a href="packages.html">Packages</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-badge" data-aos="fade-down">
+            <i class="fas fa-circle" style="color: #ff6b6b; font-size: 0.6rem;"></i> Now Booking 2025
+        </div>
+        <div data-aos="fade-up">
+            <h1>Capture Your Story <br> <span>Timeless, Colourful, Cinematic</span></h1>
+            <p>আপনার গল্পকে আমরাই ফুটিয়ে তুলি</p>
+            <div style="margin-top: 20px;">
+                <a href="contact.html" class="btn-main">Book Consultation</a>
+                <a href="portfolio.html" class="btn-main btn-filled"><i class="fas fa-play"></i> Watch Reel</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="section" style="padding-top: 0; margin-top: -50px; position: relative; z-index: 10;">
+        <div class="grid-container" style="grid-template-columns: repeat(4, 1fr); background: #1F2937; padding: 40px; border-radius: 12px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <div data-aos="fade-up">
+                <h3 style="color: var(--primary); font-size: 2.5rem;">500+</h3>
+                <p>Weddings</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="100">
+                <h3 style="color: var(--primary); font-size: 2.5rem;">8+</h3>
+                <p>Years Exp.</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <h3 style="color: var(--primary); font-size: 2.5rem;">25+</h3>
+                <p>Awards</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="300">
+                <h3 style="color: var(--primary); font-size: 2.5rem;">1.2k</h3>
+                <p>Clients</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Preview -->
+    <section class="section">
+        <div class="text-center" data-aos="fade-up">
+            <span>Our Services</span>
+            <h2>What We Offer</h2>
+        </div>
+        <div class="grid-container">
+            <div class="card" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" style="height: 250px;">
+                <div class="card-body">
+                    <h3>Wedding Cinema</h3>
+                    <p>Full event coverage with cinematic storytelling.</p>
+                    <a href="packages.html" class="link-text">View Packages &rarr;</a>
+                </div>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" style="height: 250px;">
+                <div class="card-body">
+                    <h3>Pre-Wedding</h3>
+                    <p>Romantic destination shoots for couples.</p>
+                    <a href="packages.html" class="link-text">View Packages &rarr;</a>
+                </div>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" style="height: 250px;">
+                <div class="card-body">
+                    <h3>Portrait & Groom</h3>
+                    <p>Professional portraits and candid moments.</p>
+                    <a href="packages.html" class="link-text">View Packages &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Rupmahar Studio. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/919064853609" class="float-btn"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+919064853609" class="float-btn phone-float"><i class="fas fa-phone-alt"></i></a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
