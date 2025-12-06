@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | RUPMAHAR STUDIO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">RUPMAHAR <span>STUDIO</span></div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="packages.html">Packages</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="about.html" class="active">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="btn-nav">Book Now</a>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="close-btn" onclick="toggleMenu()"><i class="fas fa-times"></i></div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <div class="page-header">
+        <div data-aos="fade-up">
+            <h1>About Us</h1>
+            <p>Where Passion Meets Precision</p>
+        </div>
+    </div>
+
+    <section class="section text-center">
+        <h2 style="color: var(--primary);">Our Story</h2>
+        <p style="max-width: 800px; margin: 20px auto; color: #ccc;">
+            Founded in 2015 by childhood friends Rupak and Mahar, Rupmahar Studio was born from a shared dream: to create photographs and films that don't just document moments, but tell stories.
+        </p>
+        <div style="font-size: 1.5rem; font-style: italic; color: white; margin-top: 30px;">
+            "Every couple has a unique story. Our job is to tell it beautifully."
+        </div>
+        <p style="color: var(--primary); margin-top: 10px;">— Rupak Das, Founder</p>
+    </section>
+
+    <footer><p>&copy; 2025 Rupmahar Studio.</p></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
