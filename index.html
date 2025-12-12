@@ -3,120 +3,2304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RUPMAHAR STUDIO | Home</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>RUPMAHAR STUDIO - Premium Wedding Photography & Videography</title>
+    <!-- Google Fonts Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Galada&family=Noto+Sans+Ol+Chiki:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <!-- Updated Favicon Path -->
+    <link rel="icon" href="assets/images/rupmaharlogo.png" type="image/png">
+    
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --coral: #ff6b6b;
+            --golden: #f59e0b;
+            --charcoal: #1a1a1a;
+            --softgrey: #f8f9fa;
+            --pink: #ec4899;
+            --purple: #8b5cf6;
+            --teal: #14b8a6;
+            --white: #ffffff;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-700);
+            
+            /* --- BACKGROUND PATH UPDATED --- */
+            /* ছবিটি এখন assets/images ফোল্ডার থেকে লোড হবে */
+            background-image: url('assets/images/background.jpg');
+             
+            /* ব্যাকআপ বা টেস্টিংয়ের জন্য নিচের অনলাইন লিংক ব্যবহার করতে পারেন (প্রয়োজনে আনকমেন্ট করুন) */
+            /* background-image: url('https://images.unsplash.com/photo-1516541196182-6bdb0516ed27?q=80&w=1887&auto=format&fit=crop'); */
+            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Parallax Effect */
+            background-color: var(--softgrey); /* Fallback color */
+            overflow-x: hidden;
+        }
+
+        /* Typography Updates */
+        .font-display {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .text-bengali {
+            font-family: 'Galada', cursive;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .text-santali {
+            font-family: 'Noto Sans Ol Chiki', sans-serif;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-radius: 9999px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--coral), var(--pink));
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(255, 107, 107, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--charcoal);
+            border: 2px solid var(--charcoal);
+        }
+
+        .btn-outline:hover {
+            background: var(--charcoal);
+            color: white;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 0;
+        }
+
+        .navbar-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--golden);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo-text .brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--golden);
+        }
+
+        .logo-text .studio {
+            font-size: 0.685rem;
+            letter-spacing: 1.5em;
+            color: white;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 2rem;
+        }
+
+        @media (min-width: 1024px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--coral);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--coral);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu-title {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, 
+                rgba(0, 0, 0, 0.6) 0%,
+                rgba(0, 0, 0, 0.4) 50%,
+                rgba(0, 0, 0, 0.7) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 2rem 1rem;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 9999px;
+            margin-bottom: 2rem;
+        }
+
+        .badge-dot {
+            width: 0.5rem;
+            height: 0.5rem;
+            background: var(--coral);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .badge-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        @media (min-width: 640px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 4.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero-title {
+                font-size: 5.5rem;
+            }
+        }
+
+        .hero-gradient {
+            background: linear-gradient(90deg, var(--coral), var(--pink), var(--golden));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-top: 0.5rem;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .hero-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.5rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .tag {
+            padding: 0.375rem 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            border-radius: 9999px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.875rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        .hero-buttons .btn {
+            min-width: 200px;
+        }
+
+        .hero-note {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-5px) translateX(-50%);
+            }
+        }
+
+        .scroll-dot {
+            width: 0.375rem;
+            height: 0.75rem;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 9999px;
+            margin-top: 0.5rem;
+        }
+
+        /* --- TRANSPARENT SECTIONS (Glassmorphism Enabled) --- */
+        .stats, 
+        .services, 
+        .portfolio {
+            padding: 4rem 0;
+            background: transparent; /* Made Transparent to show watercolor BG */
+        }
+
+        @media (min-width: 768px) {
+            .stats, .services, .portfolio {
+                padding: 6rem 0;
+            }
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 3rem;
+            }
+        }
+
+        /* GLASS CARD STYLES */
+        .stat-card {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 2rem 1rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            background: rgba(255, 107, 107, 0.1);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .stat-icon svg {
+            width: 1.75rem;
+            height: 1.75rem;
+            color: var(--coral);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        @media (min-width: 768px) {
+            .stat-number {
+                font-size: 3rem;
+            }
+        }
+
+        .stat-title {
+            color: var(--gray-700);
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+
+        .stat-subtitle {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 48rem;
+            margin: 0 auto 4rem;
+        }
+
+        .section-subtitle {
+            color: var(--coral);
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+            background: rgba(255,255,255,0.7);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 3.5rem;
+            }
+        }
+
+        .section-description {
+            color: var(--gray-700);
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            background: rgba(255,255,255,0.4);
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .section-translation {
+            color: var(--gray-600);
+            font-size: 1.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Glassmorphism for Service Cards */
+        .service-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .service-image {
+            position: relative;
+            height: 12rem;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-overlay {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .service-card:hover .service-overlay {
+            opacity: 0.6;
+        }
+
+        .service-icon {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-name {
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            margin-bottom: 0.25rem;
+            transition: color 0.3s ease;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .service-card:hover .service-name {
+            color: var(--coral);
+        }
+
+        .service-translation {
+            color: var(--gray-500);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-description {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .service-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--coral);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .service-link svg {
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-link svg {
+            transform: translateX(0.5rem);
+        }
+
+        .services-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-areas: 
+                    "big big"
+                    "small1 small2"
+                    "small3 small4"
+                    "small5 small6";
+            }
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+            cursor: pointer;
+            height: 16rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid white;
+        }
+
+        @media (min-width: 768px) {
+            .portfolio-item.big {
+                grid-area: big;
+                height: 32rem;
+            }
+        }
+
+        .portfolio-item.small {
+            height: 16rem;
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .portfolio-item:hover .portfolio-image {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, 
+                rgba(0, 0, 0, 0.7) 0%,
+                rgba(0, 0, 0, 0.2) 50%,
+                transparent 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.25rem 0.75rem;
+            background: var(--coral);
+            color: white;
+            font-size: 0.75rem;
+            border-radius: 9999px;
+            transform: translateY(-20px);
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover .portfolio-tag {
+            transform: translateY(0);
+        }
+
+        .portfolio-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover .portfolio-info {
+            transform: translateY(0);
+        }
+
+        .portfolio-title {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .portfolio-location {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 4rem;
+            height: 4rem;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(4px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover .play-button {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .play-button svg {
+            width: 2rem;
+            height: 2rem;
+            color: white;
+            fill: white;
+        }
+
+        .portfolio-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 4rem 0;
+            background: var(--charcoal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .testimonials {
+                padding: 8rem 0;
+            }
+        }
+
+        .testimonials-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .section-header.light .section-subtitle {
+            color: var(--golden);
+        }
+
+        .section-header.light .section-title {
+            color: white;
+        }
+
+        .section-header.light .section-description {
+            color: var(--gray-400);
+            background: transparent;
+        }
+
+        .section-header.light .section-translation {
+            color: var(--gray-500);
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            max-width: 56rem;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .testimonial-card {
+                padding: 3rem;
+            }
+        }
+
+        .quote-icon {
+            width: 3rem;
+            height: 3rem;
+            color: rgba(255, 107, 107, 0.5);
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: white;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        @media (min-width: 768px) {
+            .testimonial-text {
+                font-size: 1.25rem;
+            }
+        }
+
+        .testimonial-translation {
+            color: var(--gray-500);
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .client-avatar {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--coral);
+        }
+
+        .client-details h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+
+        .client-role {
+            color: var(--gray-400);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .star {
+            width: 1rem;
+            height: 1rem;
+            color: var(--golden);
+            fill: var(--golden);
+        }
+
+        .testimonial-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .nav-button {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .dot {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            width: 2rem;
+            background: var(--coral);
+        }
+
+        .dot:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        /* CTA Section */
+        .cta {
+            position: relative;
+            padding: 4rem 0;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .cta {
+                padding: 8rem 0;
+            }
+        }
+
+        .cta-bg {
+            position: absolute;
+            inset: 0;
+        }
+
+        .cta-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cta-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, 
+                rgba(255, 107, 107, 0.9) 0%,
+                rgba(236, 72, 153, 0.8) 50%,
+                rgba(245, 158, 11, 0.7) 100%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 48rem;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        @media (min-width: 768px) {
+            .cta-title {
+                font-size: 3.5rem;
+            }
+        }
+
+        .cta-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-translation {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .cta-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--coral);
+            font-weight: 600;
+            font-size: 1.125rem;
+            padding: 1rem 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-white:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            font-weight: 600;
+            font-size: 1.125rem;
+            padding: 1rem 2rem;
+            box-shadow: 0 20px 25px -5px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px -12px rgba(37, 211, 102, 0.4);
+        }
+
+        .cta-contact {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: white;
+        }
+
+        .contact-link svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--charcoal);
+            color: white;
+            padding: 4rem 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            padding-bottom: 4rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .footer-content {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .footer-logo {
+            margin-bottom: 1rem;
+        }
+
+        .footer-description {
+            color: var(--gray-400);
+            font-size: 0.875rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-translation {
+            color: var(--gray-500);
+            font-size: 1rem;
+        }
+
+        .footer-heading {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: white;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--gray-400);
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--coral);
+        }
+
+        .footer-services {
+            list-style: none;
+            color: var(--gray-400);
+            font-size: 0.875rem;
+        }
+
+        .footer-services li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-contact {
+            list-style: none;
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-contact svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: var(--coral);
+            flex-shrink: 0;
+            margin-top: 0.125rem;
+        }
+
+        .contact-text {
+            color: var(--gray-400);
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .contact-text a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-text a:hover {
+            color: var(--coral);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--coral);
+            transform: translateY(-2px);
+        }
+
+        .social-link svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem 0;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            color: var(--gray-400);
+            font-size: 0.875rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom-content {
+                flex-direction: row;
+            }
+        }
+
+        .copyright {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .copyright svg {
+            width: 1rem;
+            height: 1rem;
+            color: var(--coral);
+        }
+
+        .footer-links-bottom {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links-bottom a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links-bottom a:hover {
+            color: var(--coral);
+        }
+
+        /* Floating Action Buttons */
+        .fab-container {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .fab {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .fab:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+        }
+
+        .fab-call {
+            background: var(--charcoal);
+            color: white;
+        }
+
+        .fab-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .fab svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--charcoal);
+            z-index: 1001; /* Z-Index Fix */
+            padding: 2rem;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .mobile-nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.125rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav-link:hover {
+            color: var(--coral);
+        }
+
+        .mobile-menu-cta {
+            margin-top: auto;
+            text-align: center;
+        }
+
+        /* Scroll Animations CSS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 767px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .testimonial-text {
+                font-size: 1rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .portfolio-item {
+                height: 12rem;
+            }
+            
+            .portfolio-item.big {
+                height: 20rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .cta-buttons {
+                width: 100%;
+            }
+            
+            .cta-buttons .btn {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <i class="fas fa-camera-retro"></i>
-            <div>RUPMAHAR <span>STUDIO</span></div>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="/" class="logo">
+                <!-- UPDATED LOGO PATH -->
+                <img src="assets/images/rupmaharlogo.png" alt="Rupmahar Studio Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="brand font-display">RUPMAHAR</span>
+                    <span class="studio">STUDIO</span>
+                </div>
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <div class="nav-links">
+                <a href="https://wa.me/919064853609" target="_blank" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                    </svg>
+                    Book Now
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+            </button>
         </div>
-        <nav class="nav-links">
-            <a href="index.html" class="active">Home</a>
-            <a href="packages.html">Packages</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="contact.html" class="btn-nav">Book Now</a>
-        </nav>
-        <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-    </header>
+    </nav>
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <div class="close-btn" onclick="toggleMenu()"><i class="fas fa-times"></i></div>
-        <a href="index.html">Home</a>
-        <a href="packages.html">Packages</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <div class="mobile-menu-header">
+            <h3 class="mobile-menu-title">Menu</h3>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-nav-link active">Home</a>
+            <a href="portfolio.html" class="mobile-nav-link">Portfolio</a>
+            <a href="services.html" class="mobile-nav-link">Services</a>
+            <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+            <a href="about.html" class="mobile-nav-link">About</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+        </div>
+        
+        <div class="mobile-menu-cta">
+            <a href="https://wa.me/919064853609" target="_blank" class="btn btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                </svg>
+                Book Now
+            </a>
+        </div>
     </div>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-badge" data-aos="fade-down">
-            <i class="fas fa-circle" style="color: #ff6b6b; font-size: 0.6rem;"></i> Now Booking 2025
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80" alt="Beautiful wedding couple during golden hour">
         </div>
-        <div data-aos="fade-up">
-            <h1>Capture Your Story <br> <span>Timeless, Colourful, Cinematic</span></h1>
-            <p>আপনার গল্পকে আমরাই ফুটিয়ে তুলি</p>
-            <div style="margin-top: 20px;">
-                <a href="contact.html" class="btn-main">Book Consultation</a>
-                <a href="portfolio.html" class="btn-main btn-filled"><i class="fas fa-play"></i> Watch Reel</a>
+        <div class="hero-overlay"></div>
+        
+        <div class="container hero-content reveal">
+            <div class="badge">
+                <span class="badge-dot"></span>
+                <span class="badge-text">Now Booking 2025 Weddings</span>
+            </div>
+            
+            <h1 class="hero-title">
+                Capture Your Story
+                <span class="hero-gradient">Timeless, Colourful, Cinematic</span>
+            </h1>
+            
+            <!-- Bengali Text with Stylish Font -->
+            <p class="hero-subtitle text-bengali" style="font-size: 1.5rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 0.5rem;">
+                আপনার গল্পকে আমরাই ফুটিয়ে তুলি
+            </p>
+
+            <!-- Santali (Ol Chiki) Text -->
+            <p class="hero-subtitle text-santali" style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.85); margin-bottom: 1.5rem;">
+                ᱟᱯᱮᱭᱟᱜ ᱠᱟᱹᱦᱱᱤ ᱟᱞᱮᱞᱮ ᱥᱟᱡᱟᱣᱼᱟ
+            </p>
+            
+            <div class="tags">
+                <span class="tag">Pre-wedding</span>
+                <span class="tag">Post-wedding</span>
+                <span class="tag">Events</span>
+                <span class="tag">Photography & Videography</span>
+            </div>
+            
+            <div class="hero-buttons">
+                <a href="contact.html" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8 2v4"></path>
+                        <path d="M16 2v4"></path>
+                        <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                        <path d="M3 10h18"></path>
+                    </svg>
+                    Book a Free Consultation
+                </a>
+                <a href="portfolio.html" class="btn btn-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                    </svg>
+                    Watch Our Reel
+                </a>
+            </div>
+            
+            <p class="hero-note text-bengali">বিনামূল্যে পরামর্শ বুক করুন</p>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-dot"></div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card reveal">
+                    <div class="stat-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-number">500+</div>
+                    <div class="stat-title">Weddings Captured</div>
+                    <div class="stat-subtitle text-bengali">বিবাহ</div>
+                </div>
+                
+                <div class="stat-card reveal">
+                    <div class="stat-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+                            <circle cx="12" cy="13" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="stat-number">8+</div>
+                    <div class="stat-title">Years Experience</div>
+                    <div class="stat-subtitle text-bengali">বছরের অভিজ্ঞতা</div>
+                </div>
+                
+                <div class="stat-card reveal">
+                    <div class="stat-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
+                            <circle cx="12" cy="8" r="6"></circle>
+                        </svg>
+                    </div>
+                    <div class="stat-number">25+</div>
+                    <div class="stat-title">Awards Won</div>
+                    <div class="stat-subtitle text-bengali">পুরস্কার</div>
+                </div>
+                
+                <div class="stat-card reveal">
+                    <div class="stat-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-number">1,200+</div>
+                    <div class="stat-title">Happy Clients</div>
+                    <div class="stat-subtitle text-bengali">সন্তুষ্ট গ্রাহক</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats -->
-    <div class="section" style="padding-top: 0; margin-top: -50px; position: relative; z-index: 10;">
-        <div class="grid-container" style="grid-template-columns: repeat(4, 1fr); background: #1F2937; padding: 40px; border-radius: 12px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-            <div data-aos="fade-up">
-                <h3 style="color: var(--primary); font-size: 2.5rem;">500+</h3>
-                <p>Weddings</p>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-subtitle">Our Services</span>
+                <h2 class="section-title font-display">What We Offer</h2>
+                <p class="section-description">From intimate pre-wedding shoots to grand wedding celebrations, we bring your vision to life with creativity and passion.</p>
+                <p class="section-translation text-bengali">আমাদের সেবাসমূহ</p>
             </div>
-            <div data-aos="fade-up" data-aos-delay="100">
-                <h3 style="color: var(--primary); font-size: 2.5rem;">8+</h3>
-                <p>Years Exp.</p>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <a href="services.html" class="service-card reveal">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=600&q=80" alt="Pre-wedding">
+                        <div class="service-overlay" style="background: linear-gradient(to top, var(--coral), var(--pink));"></div>
+                        <div class="service-icon" style="background: linear-gradient(135deg, var(--coral), var(--pink));">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-name">Pre-wedding</h3>
+                        <p class="service-translation text-bengali">প্রি-ওয়েডিং</p>
+                        <p class="service-description">Romantic destination shoots that tell your love story before the big day.</p>
+                        <span class="service-link">
+                            Learn More
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                
+                <!-- Service 2 -->
+                <a href="services.html" class="service-card reveal">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" alt="Wedding Photography">
+                        <div class="service-overlay" style="background: linear-gradient(to top, var(--golden), #fb923c);"></div>
+                        <div class="service-icon" style="background: linear-gradient(135deg, var(--golden), #fb923c);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+                                <circle cx="12" cy="13" r="3"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-name">Wedding Photography</h3>
+                        <p class="service-translation text-bengali">বিবাহের ফটোগ্রাফি</p>
+                        <p class="service-description">Candid & traditional wedding photography that captures every precious moment.</p>
+                        <span class="service-link">
+                            Learn More
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
+                
+                <!-- Service 3 -->
+                <a href="services.html" class="service-card reveal">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1505932794465-147d1f1b2c97?w=600&q=80" alt="Cinematography">
+                        <div class="service-overlay" style="background: linear-gradient(to top, #8b5cf6, #6366f1);"></div>
+                        <div class="service-icon" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"></path>
+                                <rect x="2" y="6" width="14" height="12" rx="2"></rect>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-name">Cinematography</h3>
+                        <p class="service-translation text-bengali">সিনেমাটোগ্রাফি</p>
+                        <p class="service-description">Cinematic wedding films that you will treasure for generations.</p>
+                        <span class="service-link">
+                            Learn More
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"></path>
+                                <path d="m12 5 7 7-7 7"></path>
+                            </svg>
+                        </span>
+                    </div>
+                </a>
             </div>
-            <div data-aos="fade-up" data-aos-delay="200">
-                <h3 style="color: var(--primary); font-size: 2.5rem;">25+</h3>
-                <p>Awards</p>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="300">
-                <h3 style="color: var(--primary); font-size: 2.5rem;">1.2k</h3>
-                <p>Clients</p>
+            
+            <div class="services-cta reveal">
+                <a href="services.html" class="btn btn-outline">
+                    View All Services
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Services Preview -->
-    <section class="section">
-        <div class="text-center" data-aos="fade-up">
-            <span>Our Services</span>
-            <h2>What We Offer</h2>
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-subtitle">Our Work</span>
+                <h2 class="section-title font-display">Featured Portfolio</h2>
+                <p class="section-description">Explore our latest captures — each frame tells a unique story of love, joy, and celebration.</p>
+                <p class="section-translation text-bengali">আমাদের সেরা কাজ</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <!-- Big portfolio item -->
+                <div class="portfolio-item big reveal">
+                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80" alt="Priya & Arjun - Pre-wedding" class="portfolio-image">
+                    <div class="portfolio-overlay"></div>
+                    <span class="portfolio-tag">Pre-wedding</span>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-title">Priya & Arjun</h3>
+                        <p class="portfolio-location">Udaipur, Rajasthan</p>
+                    </div>
+                </div>
+                
+                <!-- Small portfolio items -->
+                <div class="portfolio-item small reveal">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80" alt="Wedding Highlights" class="portfolio-image">
+                    <div class="portfolio-overlay"></div>
+                    <span class="portfolio-tag">Cinematography</span>
+                    <div class="play-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                        </svg>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-title">Wedding Highlights</h3>
+                        <p class="portfolio-location">Kolkata</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item small reveal">
+                    <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=800&q=80" alt="Ananya & Vikram" class="portfolio-image">
+                    <div class="portfolio-overlay"></div>
+                    <span class="portfolio-tag">Wedding</span>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-title">Ananya & Vikram</h3>
+                        <p class="portfolio-location">Goa</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="portfolio-cta reveal">
+                <a href="portfolio.html" class="btn btn-primary">
+                    View Full Portfolio
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
         </div>
-        <div class="grid-container">
-            <div class="card" data-aos="fade-up">
-                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" style="height: 250px;">
-                <div class="card-body">
-                    <h3>Wedding Cinema</h3>
-                    <p>Full event coverage with cinematic storytelling.</p>
-                    <a href="packages.html" class="link-text">View Packages &rarr;</a>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-pattern"></div>
+        <div class="container">
+            <div class="section-header light reveal">
+                <span class="section-subtitle">TESTIMONIALS</span>
+                <h2 class="section-title font-display">What Our Clients Say</h2>
+                <p class="section-description">Real stories from couples and clients who trusted us with their precious moments.</p>
+                <p class="section-translation text-bengali">আমাদের গ্রাহকরা কী বলেন</p>
+            </div>
+            
+            <div class="testimonial-card reveal">
+                <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path>
+                    <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path>
+                </svg>
+                
+                <p class="testimonial-text">
+                    "Rupmahar Studio captured our pre-wedding shoot beautifully. Every photo feels like a piece of art. They understood exactly what we wanted and delivered beyond our expectations!"
+                </p>
+                
+                <p class="testimonial-translation text-bengali">
+                    "রূপমহর স্টুডিও আমাদের প্রি-ওয়েডিং শুট সুন্দরভাবে ক্যাপচার করেছে।"
+                </p>
+                
+                <div class="client-info">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80" alt="Priya Sharma" class="client-avatar">
+                    <div class="client-details">
+                        <h4>Priya Sharma</h4>
+                        <p class="client-role">Bride</p>
+                        <div class="star-rating">
+                            <svg class="star" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg>
+                            <svg class="star" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg>
+                            <svg class="star" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg>
+                            <svg class="star" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg>
+                            <svg class="star" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" style="height: 250px;">
-                <div class="card-body">
-                    <h3>Pre-Wedding</h3>
-                    <p>Romantic destination shoots for couples.</p>
-                    <a href="packages.html" class="link-text">View Packages &rarr;</a>
+            
+            <div class="testimonial-nav">
+                <button class="nav-button" aria-label="Previous testimonial">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                </button>
+                
+                <div class="nav-dots">
+                    <span class="dot active" aria-label="Go to testimonial 1"></span>
+                    <span class="dot" aria-label="Go to testimonial 2"></span>
+                    <span class="dot" aria-label="Go to testimonial 3"></span>
+                    <span class="dot" aria-label="Go to testimonial 4"></span>
                 </div>
+                
+                <button class="nav-button" aria-label="Next testimonial">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m9 18 6-6-6-6"></path>
+                    </svg>
+                </button>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" style="height: 250px;">
-                <div class="card-body">
-                    <h3>Portrait & Groom</h3>
-                    <p>Professional portraits and candid moments.</p>
-                    <a href="packages.html" class="link-text">View Packages &rarr;</a>
-                </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="cta">
+        <div class="cta-bg">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80" alt="Wedding couple silhouette">
+        </div>
+        <div class="cta-overlay"></div>
+        
+        <div class="container cta-content reveal">
+            <h2 class="cta-title font-display">Ready to Capture Your Special Moments?</h2>
+            <p class="cta-description">Have a date in mind? Tell us — we'll get back within 24 hours.</p>
+            <p class="cta-translation text-bengali">একটি তারিখ মনে আছে? আমাদের জানান — ২৪ ঘণ্টার মধ্যে ফিরে আসব।</p>
+            
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8 2v4"></path>
+                        <path d="M16 2v4"></path>
+                        <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                        <path d="M3 10h18"></path>
+                    </svg>
+                    Book a Free Consultation
+                </a>
+                
+                <a href="https://wa.me/919064853609?text=Hi!%20I%27d%20like%20to%20discuss%20booking%20a%20photography%20session." target="_blank" class="btn btn-whatsapp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                    </svg>
+                    WhatsApp Us
+                </a>
+            </div>
+            
+            <div class="cta-contact">
+                <a href="tel:+919064853609" class="contact-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    +91 90648 53609
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Rupmahar Studio. All Rights Reserved.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Column 1: Logo & Description -->
+                <div class="footer-col reveal">
+                    <div class="footer-logo">
+                        <a href="index.html" class="logo">
+                            <!-- UPDATED LOGO PATH -->
+                            <img src="assets/images/rupmaharlogo.png" alt="Rupmahar Studio Logo" class="logo-img">
+                            <div class="logo-text">
+                                <span class="brand font-display">RUPMAHAR</span>
+                                <span class="studio">STUDIO</span>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="footer-description">
+                        Capturing candid moments with cinematic style. Premium pre-wedding, post-wedding, and event photography & videography.
+                    </p>
+                    <p class="footer-translation text-bengali">আপনার গল্পকে আমরাই ফুটিয়ে তুলি</p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col reveal">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Services -->
+                <div class="footer-col reveal">
+                    <h4 class="footer-heading">Our Services</h4>
+                    <ul class="footer-services">
+                        <li>Pre-wedding Photography</li>
+                        <li>Wedding Cinematography</li>
+                        <li>Event Coverage</li>
+                        <li>Portrait Sessions</li>
+                        <li>Equipment Rentals</li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact -->
+                <div class="footer-col reveal">
+                    <h4 class="footer-heading">Get in Touch</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span class="contact-text">
+                                Chhagalkanali, Bangla,<br>
+                                Bankura, West Bengal 722136
+                            </span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <span class="contact-text">
+                                <a href="tel:+919064853609">+91 90648 53609</a>
+                            </span>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                            </svg>
+                            <span class="contact-text">
+                                <a href="mailto:info@rupmaharstudio.com">info@rupmaharstudio.com</a>
+                            </span>
+                        </li>
+                    </ul>
+                    
+                    <div class="social-links">
+                        <a href="https://instagram.com/rupmaharstudio" target="_blank" class="social-link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/@rupmaharstudio" target="_blank" class="social-link" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
+                                <path d="m10 15 5-3-5-3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://facebook.com/rupmaharstudio" target="_blank" class="social-link" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/rupmaharstudio" target="_blank" class="social-link" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://pinterest.com/rupmaharstudio" target="_blank" class="social-link" aria-label="Pinterest">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11.39 20.61a10 10 0 1 1 3.87-19.74 10 10 0 0 1-3.87 19.74Z"></path>
+                                <path d="M8 10.5a4.5 4.5 0 0 0 3.6 4.4c-.5-1.1.1-1.9.5-2.8.5-.9 1-1.8 1-3.1 0-2.2-1.8-4-4-4s-4 1.8-4 4 1.8 4 4 4c.4 0 .8 0 1.2-.2"></path>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/company/rupmaharstudio" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect width="4" height="12" x="2" y="9"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">
+                        © 2025 Rupmahar Studio. Made with 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                        </svg>
+                        in India
+                    </p>
+                    <div class="footer-links-bottom">
+                        <a href="faq.html">FAQ</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <!-- Floating Buttons -->
-    <a href="https://wa.me/919064853609" class="float-btn"><i class="fab fa-whatsapp"></i></a>
-    <a href="tel:+919064853609" class="float-btn phone-float"><i class="fas fa-phone-alt"></i></a>
+    <!-- Floating Action Buttons -->
+    <div class="fab-container">
+        <a href="tel:+919064853609" class="fab fab-call" aria-label="Call us">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+        </a>
+        <a href="https://wa.me/919064853609?text=Hi!%20I%27m%20interested%20in%20your%20photography%20services." target="_blank" class="fab fab-whatsapp" aria-label="WhatsApp us">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+            </svg>
+        </a>
+    </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileMenuClose.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Testimonial navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.querySelector('.nav-button[aria-label="Previous testimonial"]');
+            const nextBtn = document.querySelector('.nav-button[aria-label="Next testimonial"]');
+            
+            let currentTestimonial = 0;
+            
+            function updateActiveDot(index) {
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+            
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    currentTestimonial = (currentTestimonial + 1) % dots.length;
+                    updateActiveDot(currentTestimonial);
+                });
+            }
+            
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    currentTestimonial = (currentTestimonial - 1 + dots.length) % dots.length;
+                    updateActiveDot(currentTestimonial);
+                });
+            }
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    currentTestimonial = index;
+                    updateActiveDot(currentTestimonial);
+                });
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const target = document.querySelector(targetId);
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // --------------------------------------------------------
+        // Smooth Animations & Number Counter
+        // --------------------------------------------------------
+
+        // 1. Reveal Animations (Floating/Vese asa effect)
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            var windowHeight = window.innerHeight;
+            var elementVisible = 150;
+
+            for (var i = 0; i < reveals.length; i++) {
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+
+        // 2. Number Counting Animation (500+, 8+, etc.)
+        const statsSection = document.querySelector('.stats');
+        const statNumbers = document.querySelectorAll('.stat-number');
+        let started = false; // Flag to check if counter already ran
+
+        function startCount(el) {
+            let originalText = el.innerText;
+            // Extract number, removing commas and suffix
+            let goal = parseInt(originalText.replace(/,/g, '').replace(/\+/g, ''));
+            // Check if there was a plus sign
+            let suffix = originalText.includes('+') ? '+' : '';
+            
+            let count = 0;
+            let duration = 2000; // Animation duration in milliseconds (2 seconds)
+            let increment = goal / (duration / 20); // Calculate increment step
+
+            let timer = setInterval(() => {
+                count += increment;
+                if (count >= goal) {
+                    el.innerText = goal.toLocaleString() + suffix; // Add commas back + suffix
+                    clearInterval(timer);
+                } else {
+                    el.innerText = Math.ceil(count).toLocaleString() + suffix;
+                }
+            }, 20);
+        }
+
+        // Use Intersection Observer to start counting when scrolled into view
+        if (statsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && !started) {
+                    statNumbers.forEach((el) => startCount(el));
+                    started = true;
+                }
+            }, { threshold: 0.3 }); // Start when 30% of the section is visible
+            
+            observer.observe(statsSection);
+        }
+    </script>
 </body>
 </html>
